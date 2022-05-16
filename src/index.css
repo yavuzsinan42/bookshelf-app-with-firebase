@@ -13,9 +13,9 @@ body {
   margin: 0 auto;
 }
 nav {
-  background: #ea8685;
+  background: #2f3640;
   padding: 10px 20px;
-  color: #fff;
+  color: #f53b57;
   display: flex;
   align-items: center;
 }
@@ -29,7 +29,7 @@ nav li {
   cursor: pointer;
 }
 nav a {
-  color: #fff;
+  color: #f53b57;
   text-decoration: none;
 }
 .book-list ul {
@@ -38,10 +38,11 @@ nav a {
 .book-list li {
   list-style-type: none;
   padding: 10px;
-  background: #778ca3;
+  background: #0097e6;
   margin: 10px 0;
-  cursor: pointer;
+  
   color: white;
+  border-radius: 5px;
 }
 label, label span {
   display: block;
@@ -57,4 +58,21 @@ button {
   border: 0;
   padding: 6px 8px;
   cursor: pointer;
+  position: absolute;
+ 
+  
+}
+li button {
+  background: #ea8685;
+  color: #fff;
+  border: 0;
+  padding: 6px 8px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+li.books{
+  padding-bottom: 25px;
+}
+span{
+  color: #34495e;
 }
