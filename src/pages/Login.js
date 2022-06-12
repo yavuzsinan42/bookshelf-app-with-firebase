@@ -15,7 +15,7 @@ export default function Login() {
   
   return (
     <div>
-      <h2>Giriş Yapın</h2>
+      <h2 style={{color:'white'}}>Giriş Yapın</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Email Adresiniz:</span>
@@ -35,7 +35,7 @@ export default function Login() {
             value={password}
           />
         </label>
-        <button>Giriş</button>
+        <button className='btn-form'>Giriş</button>
         
       </form>
       {error && <p>{error}</p>}

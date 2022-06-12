@@ -3,6 +3,7 @@ import { db } from "../Firebase/config";
 import { collection, addDoc } from "firebase/firestore";
 import {Row,Col}from "react-bootstrap"
 import { useAuthContext } from "../hooks/useAuthContext";
+import ReactFileBase64 from 'react-file-base64'
 
 export default function BookForm() {
     const [newBook, setNewBook] = useState({
@@ -10,6 +11,7 @@ export default function BookForm() {
         author: '',
         publishingYear: '',
         page: '',
+        image:'',
     })
  const {user} =useAuthContext();
 
@@ -19,13 +21,13 @@ export default function BookForm() {
     const ref = collection(db, "books");
     await addDoc(ref, { ...newBook,uid:user.uid});
 
-    await setNewBook({title:'',author: '',publishingYear: '',page: ''});
+    await setNewBook({title:'',author: '',publishingYear: '',page: '',image:''});
     console.log(newBook);
 
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="book-form">
       <Row>
       <span>Yeni Kitap Ekle</span>
         <hr/>
@@ -47,7 +49,12 @@ export default function BookForm() {
           onChange={(e)=> setNewBook({...newBook,author:e.target.value})}
           value={newBook.author}
         />
-      </label></Col>
+      </label>
+      <label>
+      <span>Kitap Resmi:</span>
+      <ReactFileBase64 type='file' multiple={false} onDone={({base64})=>{setNewBook({...newBook,image:base64})}} />
+      </label>
+      </Col>
         <Col sm="6">
         <label>
       <span>Kitap Basım Yılı:</span>
@@ -72,7 +79,7 @@ export default function BookForm() {
         </Row>
       
       
-      <button>EKLE</button>
+      <button className="btn-form">EKLE</button>
     </form>
   );
 }

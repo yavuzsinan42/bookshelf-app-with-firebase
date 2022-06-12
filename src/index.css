@@ -1,16 +1,35 @@
 body {
-  margin: 40px 0;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f2f2f2;
+  background-image: url("./images/background.jpg");
+  
+   
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+	font-family: "Roboto", sans-serif;
+	
+	height: 100vh;
 }
 
 .App {
-  max-width: 640px;
-  margin: 0 auto;
+  
+  margin-left: 10% ;
+  margin-right: 10%;
+ 
 }
 nav {
   background: #2f3640;
@@ -18,6 +37,7 @@ nav {
   color: #f53b57;
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 }
 nav h1 {
   margin: 0;
@@ -32,18 +52,12 @@ nav a {
   color: #f53b57;
   text-decoration: none;
 }
-.book-list ul {
-  padding: 0;
+nav a:hover {
+  color: #27262c;
+  text-decoration: none;
 }
-.book-list li {
-  list-style-type: none;
-  padding: 10px;
-  background: #0097e6;
-  margin: 10px 0;
-  
-  color: white;
-  border-radius: 5px;
-}
+
+
 label, label span {
   display: block;
   margin: 6px 0;
@@ -52,8 +66,8 @@ input {
   padding: 6px;
   margin-bottom: 12px;
 }
-button {
-  background: #ea8685;
+.btn-form {
+  background: #b53230;
   color: #fff;
   border: 0;
   padding: 6px 8px;
@@ -62,17 +76,208 @@ button {
  
   
 }
-li button {
-  background: #ea8685;
-  color: #fff;
-  border: 0;
-  padding: 6px 8px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-li.books{
-  padding-bottom: 25px;
-}
+
+
 span{
-  color: #34495e;
+  color: rgb(242, 242, 242)
+}
+/* Navbar*/
+li {
+  padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+  min-width: 80px;
+  margin: auto;
+}
+
+li:hover {
+  background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 #ef816c;
+  font-weight: bold;
+}
+li:active {
+  transform: translateY(4px);
+  
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+.hero-container {
+	margin: auto;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.main-container {
+	width: 270px;
+	height: 540px;
+	position: relative;
+	margin: 0 10px;
+  margin-bottom: 50px ;
+  
+}
+
+.poster-container {
+	width: 230px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	z-index: 9999;
+}
+
+.poster {
+	width: 100%;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+  max-height: 330px;
+}
+
+.ticket-container {
+	background: #fff;
+	width: 270px;
+	height: 520px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	position: absolute;
+	top: 35px;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+	opacity: 0;
+ 
+}
+
+.main-container:hover .ticket-container {
+	opacity: 1;
+	animation: bounceIn 0.6s linear;
+  
+}
+
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.01, 1.01, 1.01);
+		transform: scale3d(1.01, 1.01, 1.01);
+	}
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+/* @keyframes bounce {
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.ticket__content {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.ticket__movie-title {
+	text-transform: uppercase;
+	margin-bottom: 2px;
+}
+
+.ticket__movie-slogan {
+	color: #999;
+	font-size: 0.9rem;
+	margin-bottom: 5px;
+}
+
+.ticket__current-price {
+	color: #69c982;
+	font-size: 1.4rem;
+	font-weight: bold;
+  margin-bottom: 2px;
+}
+
+
+
+.ticket__buy-btn {
+	cursor: pointer;
+	width: 100%;
+	background: #2f2f2f;
+	color: white;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+  
+}
+.book-form{
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
